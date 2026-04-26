@@ -1,0 +1,26 @@
+[package]
+name        = "genetikus-mc1r"
+version     = { workspace = true }
+edition     = { workspace = true }
+license     = { workspace = true }
+repository  = { workspace = true }
+rust-version = { workspace = true }
+description = "MC1R payload: locus constants, RHC SNPs, and end-to-end example."
+
+[dependencies]
+genetikus-magma   = { workspace = true }
+genetikus-runtime = { workspace = true }
+genetikus-genome  = { workspace = true }
+genetikus-geneio  = { workspace = true }
+rayon             = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+
+[[example]]
+name = "mc1r_diagnostic"
+path = "examples/mc1r_diagnostic.rs"
+
+[[bench]]
+name    = "matcher"
+harness = false

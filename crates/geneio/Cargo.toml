@@ -1,0 +1,13 @@
+[package]
+name        = "genetikus-geneio"
+version     = { workspace = true }
+edition     = { workspace = true }
+license     = { workspace = true }
+repository  = { workspace = true }
+rust-version = { workspace = true }
+description = "Memory-mapped FASTA / VCF readers."
+
+[dependencies]
+genetikus-genome = { workspace = true }
+memmap2          = { workspace = true }
+thiserror        = { workspace = true }

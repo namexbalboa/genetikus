@@ -1,0 +1,12 @@
+[package]
+name        = "genetikus-genome"
+version     = { workspace = true }
+edition     = { workspace = true }
+license     = { workspace = true }
+repository  = { workspace = true }
+rust-version = { workspace = true }
+description = "Bit-packed DNA buffer and bitwise variant matcher (DOD)."
+
+[dependencies]
+rayon     = { workspace = true }
+thiserror = { workspace = true }

@@ -1,0 +1,43 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/magma",
+    "crates/runtime",
+    "crates/genome",
+    "crates/geneio",
+    "crates/mc1r",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/namexbalboa/genetikus"
+rust-version = "1.78"
+
+[workspace.dependencies]
+# Internal crates
+genetikus-magma   = { path = "crates/magma",   version = "0.1.0" }
+genetikus-runtime = { path = "crates/runtime", version = "0.1.0" }
+genetikus-genome  = { path = "crates/genome",  version = "0.1.0" }
+genetikus-geneio  = { path = "crates/geneio",  version = "0.1.0" }
+
+# Concurrency / parallelism
+crossbeam-channel = "0.5"
+rayon             = "1.10"
+
+# I/O
+memmap2 = "0.9"
+
+# Errors
+thiserror = "1.0"
+
+# Dev
+criterion = { version = "0.5", default-features = false, features = ["html_reports"] }
+
+[profile.release]
+codegen-units = 1
+lto           = "fat"
+panic         = "abort"
+opt-level     = 3
+debug         = false
